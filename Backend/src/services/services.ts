@@ -24,7 +24,7 @@ interface GitHubUser {
 
 export const getUserRepo = async (username: string) => {
   try {
-    const res = await fetch(`${BASE_URL}/users/${username}`, {
+    const res = await fetch(`${BASE_URL}/users/${username}/repos`, {
       headers: {
         Authorization: `token ${process.env.GITHUB_TOKEN}`,
         "User-Agent": "GITHUB_USER",
@@ -54,7 +54,7 @@ export const getUserProfile = async(username:string)=>{
 
     try {
         
-    const res = await fetch(`${BASE_URL}/users/${username}/repo`,{
+    const res = await fetch(`${BASE_URL}/users/${username}`,{
         headers:{
             Authorization:`token ${process.env.GITHUB_TOKEN}`,
             "User-Agent":"GITHUB_USER"
